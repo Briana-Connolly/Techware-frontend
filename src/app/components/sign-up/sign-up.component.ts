@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, } from '@angular/forms';
+import { UserAccountService } from '../../services/userAccount.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +18,11 @@ export class SignUpComponent implements OnInit {
   country = new FormControl('');
   zip = new FormControl('');
 
-  constructor() { }
+  constructor(private userAccountService: UserAccountService) { }
+
+  onSubmit() {
+    this.userAccountService.signup(this.firstName, this.lastName, this.userName, this.confirmPassword);
+  }
 
   ngOnInit() {
   }

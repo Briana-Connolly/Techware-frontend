@@ -27,8 +27,6 @@ export class MensComponent implements OnInit {
     this.products[num] = this.productService.find(num);
   }
 
-
-
   toggleModal2() {
     this.isModal2Active = !this.isModal2Active;
   }
