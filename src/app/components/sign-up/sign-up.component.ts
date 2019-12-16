@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { UserAccountService } from '../../services/userAccount.service';
 
 @Component({
@@ -13,15 +15,16 @@ export class SignUpComponent implements OnInit {
   userName = new FormControl('');
   setPassword = new FormControl('');
   confirmPassword = new FormControl('');
-  address = new FormControl('');
-  state = new FormControl('');
-  country = new FormControl('');
-  zip = new FormControl('');
+  email = new FormControl('');
+  dateOfBirth = new FormControl('');
+  phoneNumber= new FormControl('');
 
-  constructor(private userAccountService: UserAccountService) { }
+  constructor(private userAccountService: UserAccountService, private route: ActivatedRoute,
+              private router: Router) { }
 
   onSubmit() {
-    this.userAccountService.signup(this.firstName, this.lastName, this.userName, this.confirmPassword);
+   this.userAccountService.signup(this.email.value, this.firstName.value, this.lastName.value, this.userName.value, this.confirmPassword.value, this.dateOfBirth.value, this.phoneNumber.value);
+    this.router.navigate(['/login']);
   }
 
   ngOnInit() {

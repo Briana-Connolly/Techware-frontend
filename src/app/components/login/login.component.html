@@ -1,26 +1,32 @@
-<div class="container">
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label>
+<section>
+  <br>
+  <br>
+  <br>
+<div class="container has-text-centered">
+  <br>
+  <h1>Login or Create a new Account</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <br><label>
       Username:
       <input type="text" [formControl]="userName">
     </label>
-  </div>
+    </div>
 
-  <div>
-    <label>
+    <div>
+      <br><label>
       Password:
       <input type="password" [formControl]="password">
     </label>
-  </div>
+    </div>
+    <br>
+    <button class="button" type="submit">Login</button>
+  </form>
 
-  <button class="button" type="submit">Login</button>
-</form>
-
-  <div class="buttons">
     <a class="button is-primary" routerLink="/signUp">
       <strong>Sign Up</strong>
     </a>
-  </div>
 
+  <br><br>
 </div>
+</section>

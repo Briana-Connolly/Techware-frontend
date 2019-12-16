@@ -1,5 +1,5 @@
 <h3>Cart Info</h3>
-<table border="1">
+<table border="1" class="table is-striped is-fullwidth">
   <tr>
     <th>Option</th>
     <th>Id</th>
@@ -11,12 +11,12 @@
   </tr>
   <tr *ngFor="let item of items">
     <td align="center">
-      <a (click)="remove(item.product.id)">X</a>
+      <a (click)="remove(item.product.id)">Delete</a>
     </td>
     <td>{{item.product.id}}</td>
     <td>{{item.product.name}}</td>
     <td>
-      <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{item.product.photo}}" width="50">
+      <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{item.product.photo}}" width="100">
     </td>
     <td>{{item.product.price}}</td>
     <td>{{item.quantity}}</td>

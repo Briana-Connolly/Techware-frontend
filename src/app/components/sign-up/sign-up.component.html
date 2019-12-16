@@ -1,22 +1,29 @@
-<div class="container">
+<section>
+  <br>
+  <br>
+  <br>
+<div class="container has-text-centered">
+
   <form (ngSubmit)="onSubmit()">
-
+    <h1>Sign Up</h1>
+    <div>
+    <label>Enter Email: <input type="text" [formControl]="email"> </label>
+    </div>
     <label>Enter First Name: <input type="text" [formControl]="firstName"> </label>
-
     <label>Enter Last Name: <input type="text" [formControl]="lastName"> </label>
 
     <div>
-    <label>Address: <input type="text" [formControl]="address"> </label>
+      <label>
+        Enter Birthday (Year-Month-Day):
+        <input type="text" [formControl]="dateOfBirth">
+      </label>
     </div>
 
     <div>
-    <label> City: <input type="city" [formControl]="address"> </label>
-    <label> State: <input type="state" [formControl]="state"> </label>
-    </div>
-
-    <div>
-    <label> ZIP: <input type="zip" [formControl]="zip"> </label>
-    <label>Country: <input type="country" [formControl]="country"></label>
+      <label>
+        Enter Phone Number:
+        <input type="text" [formControl]="phoneNumber">
+      </label>
     </div>
 
     <div>
@@ -44,4 +51,4 @@
   </form>
 
 </div>
-
+</section>

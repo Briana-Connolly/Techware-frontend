@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../entities/user.entity';
 import {FormControl} from "@angular/forms";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class UserAccountService {
 
   loginUrl = 'http://techware.eastus.azurecontainer.io:8443/api/v1/login';
   signupUrl = 'http://techware.eastus.azurecontainer.io:8443/api/v1/signup';
-  getAccUrl = 'https://techware.eastus.azurecontainer.io:8443/api/v1/myaccount?useraccountId=1';
+  getAccUrl = 'http://techware.eastus.azurecontainer.io:8443/api/v1/myaccount?useraccountId=1';
 
   constructor(private http: HttpClient) {
   }
@@ -29,18 +30,20 @@ export class UserAccountService {
       });
   }
 
-  // signup(firstname: FormControl, lastname: FormControl, username: FormControl, password: FormControl){
-  //   return this.http.post(this.signupUrl, JSON.stringify({
-  //     firstname, lastname, username, password
-  //   })).subscribe(
-  //     (data: any) => {
-  //       console.log(data);
-  //     }
-  //   );
-  // }
+  signup(email: string, firstName: string, lastName: string, username: string, password: string, dateOfBirth: string, phoneNumber: string){
+    return this.http.post(this.signupUrl, JSON.stringify({ email: email,
+      firstName: firstName, lastName: lastName, username: username, password: password, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber,
+    })).subscribe(
+      (data: any) => {
+        console.log(data);
+      }
+    );
+  }
 
   getAccount(){
-      console.log(this.http.get(this.getAccUrl));
-   }
+    this.http.get(this.getAccUrl).subscribe(users => {
+      return users;
+    });
 
+  }
 }

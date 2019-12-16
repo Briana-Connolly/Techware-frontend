@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private userAccountService: UserAccountService, private route: ActivatedRoute,
               private router: Router) {
-
   }
 
   onSubmit() {
