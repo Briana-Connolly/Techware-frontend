@@ -15,6 +15,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ProductService } from './services/product.service';
 import {UserAccountService} from "./services/userAccount.service";
 import { CartComponent } from './components/cart/cart.component';
+import { AccountComponent } from './components/account/account.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CartComponent } from './components/cart/cart.component';
     SignUpComponent,
     MensComponent,
     CheckoutComponent,
-    CartComponent
+    CartComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

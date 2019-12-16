@@ -8,35 +8,39 @@ import {FormControl} from "@angular/forms";
 })
 export class UserAccountService {
 
-  loginUrl = 'https://techware.eastus.azurecontainer.io:8443/api/v1/login?username=johndoe@gmail.com&password=password1';
-  signupUrl = 'https://techware.eastus.azurecontainer.io:8443/api/v1/signup';
+  loginUrl = 'http://techware.eastus.azurecontainer.io:8443/api/v1/login';
+  signupUrl = 'http://techware.eastus.azurecontainer.io:8443/api/v1/signup';
   getAccUrl = 'https://techware.eastus.azurecontainer.io:8443/api/v1/myaccount?useraccountId=1';
 
   constructor(private http: HttpClient) {
   }
 
-  login(username: FormControl, password: FormControl) {
+  login(username: string, password: string) {
     console.log(username + '' + password);
-    //const headers = new HttpHeaders().append('Content-Type', 'application/json')
-
-    return this.http.post(this.loginUrl, {'username': username, 'password': password}  )
-      .subscribe(
-        (data: any) => {
-          console.log(data);
-        }
-      );
+    // const headers = new HttpHeaders().append('Content-Type', 'application/json')
+    const params: string = [
+      `username=${username}`,
+      `password=${password}`
+    ].join('&');
+    const url = `${this.loginUrl}?${params}`;
+    return this.http.post(url, JSON.stringify(''))
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 
-  signup(firstname: FormControl, lastname: FormControl, username: FormControl, password: FormControl){
-      return this.http.post(this.signupUrl, {'firstname' : firstname, 'lastname' : lastname, 'username': username, 'password': password}) .subscribe(
-        (data: any) => {
-          console.log(data);
-        }
-      );
-  }
+  // signup(firstname: FormControl, lastname: FormControl, username: FormControl, password: FormControl){
+  //   return this.http.post(this.signupUrl, JSON.stringify({
+  //     firstname, lastname, username, password
+  //   })).subscribe(
+  //     (data: any) => {
+  //       console.log(data);
+  //     }
+  //   );
+  // }
 
   getAccount(){
-    return this.http.get(this.getAccUrl);
-  }
+      console.log(this.http.get(this.getAccUrl));
+   }
 
 }
