@@ -8,6 +8,8 @@ import {MensComponent} from "./components/mens/mens.component";
 import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {AccountComponent} from "./components/account/account.component";
+import {WomensComponent} from "./components/womens/womens.component";
+import {KidsComponent} from "./components/kids/kids.component";
 
 
 const routes: Routes = [
@@ -38,6 +40,14 @@ const routes: Routes = [
   ,{
     path: 'account',
     component: AccountComponent
+  },
+  {
+    path: 'womens',
+    component: WomensComponent
+  },
+  {
+    path: 'kids',
+    component: KidsComponent
   }
 ];
 

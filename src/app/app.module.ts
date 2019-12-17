@@ -16,6 +16,8 @@ import { ProductService } from './services/product.service';
 import {UserAccountService} from "./services/userAccount.service";
 import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
+import { WomensComponent } from './components/womens/womens.component';
+import { KidsComponent } from './components/kids/kids.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { AccountComponent } from './components/account/account.component';
     MensComponent,
     CheckoutComponent,
     CartComponent,
-    AccountComponent
+    AccountComponent,
+    WomensComponent,
+    KidsComponent
   ],
   imports: [
     BrowserModule,

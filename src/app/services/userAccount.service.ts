@@ -41,9 +41,8 @@ export class UserAccountService {
   }
 
   getAccount(){
-    this.http.get(this.getAccUrl).subscribe(users => {
-      return users;
+    return this.http.get(this.getAccUrl).subscribe(users => {
+      console.log(users);
     });
-
   }
 }

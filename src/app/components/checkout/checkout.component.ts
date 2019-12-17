@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -18,9 +19,14 @@ export class CheckoutComponent implements OnInit {
   expYear = new FormControl('');
   cvv = new FormControl('');
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.router.navigate(['/']);
   }
 
 }

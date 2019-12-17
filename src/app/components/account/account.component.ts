@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAccountService } from '../../services/userAccount.service';
 import {User} from "../../entities/user.entity";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-account',
@@ -10,7 +11,12 @@ import {Observable} from "rxjs";
 })
 export class AccountComponent implements OnInit {
 
-  private user:  any = [];
+  userName = new FormControl('');
+  itemName = new FormControl('');
+  itemPrice = new FormControl('');
+  itemSize = new FormControl('');
+
+  user;
 
   constructor(private userService: UserAccountService) {
   }

@@ -1,0 +1,36 @@
+<section class="hero is-medium">
+  <div class="hero-body">
+  </div>
+</section>
+
+<br>
+<h1>Kids Apparel</h1>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline" >
+      <div class="column card" *ngFor="let product of products">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="{{product.photo}}" alt="Alonso Jersey">
+          </figure>
+        </div>
+        <div class="card-content">
+
+          <p class="title is-4">{{product.name}}</p>
+          <p class="subtitle is-6"> Seller: @username</p>
+          <hr>
+          <div class="content">
+            <p>Size: {{product.size}}</p>
+            <p>Price: {{product.price}}</p>
+            <br>
+            <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

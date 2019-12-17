@@ -1,0 +1,10 @@
+.hero {
+  background-image: url('src/assets/img/womens-hero.jpg') !important;
+  background-size: cover;
+  background-position: center center;
+}
+
+h1{
+  font-size: 50px;
+  text-align: center;
+}

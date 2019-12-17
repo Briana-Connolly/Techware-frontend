@@ -1,3 +1,47 @@
-<div >
-  <p>Welcome {{user}}!</p>
+<div class="has-text-centered">
+  <h1>Welcome John!</h1>
+  <h2>Account Information</h2>
+  <p>Name: John Dough</p>
+  <p>Email: johndoe@gmail.com</p>
+  <p>DOB: 1995-01-01</p>
+  <p>PhoneNumber: "111-111-1111"</p>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>Seller Form</h1>
 </div>
+ <div class="container has-text-centered">
+    <form>
+      <br>
+      <div>
+        <label>
+          Username:
+          <input type="text" [formControl]="userName">
+        </label>
+      </div>
+      <br>
+      <div>
+        <label>
+          Item Name:
+          <input type="text" [formControl]="itemName">
+        </label>
+      </div>
+      <br>
+      <div>
+        <label>
+          Item Price
+          <input type="text" [formControl]="itemPrice">
+        </label>
+      </div>
+      <div>
+        <label>
+          Item Size
+          <input type="text" [formControl]="itemSize">
+        </label>
+      </div>
+      <br>
+      <button class="button1" type="submit">Submit</button>
+    </form>
+  </div>

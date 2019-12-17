@@ -5,23 +5,16 @@ import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-mens',
-  templateUrl: './mens.component.html',
-  styleUrls: ['./mens.component.css']
+  templateUrl: './womens.component.html',
+  styleUrls: ['./womens.component.css']
 })
-export class MensComponent implements OnInit {
+export class WomensComponent implements OnInit {
 
   private products: Product[];
-
-  isModal1Active: boolean = false;
-  isModal2Active: boolean = false;
-  isModal3Active: boolean = false;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.products = this.productService.findAll();
-    console.log(this.products);
+    this.products = this.productService.findWomens();
   }
-
-
 }

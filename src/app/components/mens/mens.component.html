@@ -17,42 +17,42 @@
         </div>
         <div class="card-content">
 
-              <p class="title is-4">{{product.name}}</p>
-              <p class="subtitle is-6"> Seller: @username</p>
+          <p class="title is-4">{{product.name}}</p>
+          <p class="subtitle is-6"> Seller: @username</p>
           <hr>
-        <div class="content">
-         <p>Size: Large</p>
-          <p>Price: {{product.price}}</p>
-          <br>
-          <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">
-                 <span>Add to Cart</span>
-             </button>
+          <div class="content">
+            <p>Size: Large</p>
+            <p>Price: {{product.price}}</p>
+            <br>
+            <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">
+              <span>Add to Cart</span>
+            </button>
 
 
             <!--          <button class="button is-primary is-pulled-right" (click)="toggleModal1(product.id)">-->
-<!--            <span>More</span>-->
-<!--          </button>-->
-<!--          <div class="modal" [ngClass]="{ 'is-active' : isModal1Active }">-->
-<!--            <div class="modal-background" (click)="toggleModal1(product.id)"></div>-->
-<!--            <div class="modal-card">-->
-<!--              <header class="modal-card-head">-->
-<!--                <p class="modal-card-title">{{product.name}}</p>-->
-<!--                <button class="delete" aria-label="close" (click)="toggleModal1(product.id)"></button>-->
-<!--              </header>-->
-<!--              <section class="modal-card-body">-->
-<!--                <p>Seller: @username</p>-->
-<!--                <p>Size: Large</p>-->
-<!--                <p>Price: {{product.price}}</p>-->
-<!--                <p>Next availability to rent: December 12th</p>-->
-<!--              </section>-->
-<!--              <footer class="modal-card-foot">-->
-<!--                <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">Add to Cart</button>-->
-<!--              </footer>-->
-<!--            </div>-->
-<!--          </div>-->
+            <!--            <span>More</span>-->
+            <!--          </button>-->
+            <!--          <div class="modal" [ngClass]="{ 'is-active' : isModal1Active }">-->
+            <!--            <div class="modal-background" (click)="toggleModal1(product.id)"></div>-->
+            <!--            <div class="modal-card">-->
+            <!--              <header class="modal-card-head">-->
+            <!--                <p class="modal-card-title">{{product.name}}</p>-->
+            <!--                <button class="delete" aria-label="close" (click)="toggleModal1(product.id)"></button>-->
+            <!--              </header>-->
+            <!--              <section class="modal-card-body">-->
+            <!--                <p>Seller: @username</p>-->
+            <!--                <p>Size: Large</p>-->
+            <!--                <p>Price: {{product.price}}</p>-->
+            <!--                <p>Next availability to rent: December 12th</p>-->
+            <!--              </section>-->
+            <!--              <footer class="modal-card-foot">-->
+            <!--                <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">Add to Cart</button>-->
+            <!--              </footer>-->
+            <!--            </div>-->
+            <!--          </div>-->
+          </div>
         </div>
       </div>
-      </div>
-      </div>
     </div>
+  </div>
 </section>
